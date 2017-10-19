@@ -1,13 +1,17 @@
-var clienteModel = require('../models/clienteModel')();
+var clienteController = require('../controllers/clienteController');
 
-module.exports = function(app){
-  app.get('/contato',function(req,res){
-    res.render('site/contato');
+module.exports = function(app) {
+
+  app.get('/',function(request, response) {
+    clienteController.index(request, response);
   });
 
-  app.get('/',function(req,res){
-    //console.log(clienteModel.all());
-    var listaClientes = clienteModel.all();
-    res.render('site/home',{clientes:listaClientes});
+  app.post('/',function(request, response) {
+    clienteController.save(request, response);
   });
-};
+
+  app.get('/detalhe/:id',function(request, response) {
+    clienteController.show(request, response);
+  });
+
+}

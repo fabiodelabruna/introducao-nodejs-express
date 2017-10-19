@@ -43,3 +43,30 @@ Controller
 O responsável por receber todas as requisições do usuário.
 Seus métodos chamados actions são responsáveis por uma página,
 controlando qual model usar e qual view será mostrado ao usuário.
+
+Mysql:
+https://dev.mysql.com/downloads/mysql/
+
+Modulo para Mysql:
+npm install mysql --save
+
+Instalar o body-parser:
+npm install body-parser --save
+
+Tratar error mysql
+https://github.com/mysqljs/mysql#timeouts
+
+Instalar o body-parser:
+npm install body-parser --save
+
+config body-parser:
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+Validação:
+https://github.com/ctavan/express-validator#validation-result
+npm install express-validator --save
+config:
+var expressValidator = require('express-validator');
+app.use(expressValidator());
